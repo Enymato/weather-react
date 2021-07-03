@@ -23,7 +23,7 @@ export default function SearchWeather(){
     event.preventDefault();
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2af71c45aee3a26db7f753cad13a25f1&units=metric`;
     axios.get(url).then(displayWeather);
-    console.log(response.data);
+   
   }
   function searchCity(event) {
     setCity(event.target.value);
