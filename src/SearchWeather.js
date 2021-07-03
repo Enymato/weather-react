@@ -39,6 +39,7 @@ export default function SearchWeather(){
       <div>
         {form}
         <ul className="totallist">
+          <li> {city}  </li>
           <li> temperature:{Math.round(weather.temperature)}°C </li>
           <li> description:{weather.humidity}% </li>
           <li> Humidity: {weather.humidity}%</li>
