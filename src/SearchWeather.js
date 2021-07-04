@@ -29,25 +29,29 @@ export default function SearchWeather(){
     setCity(event.target.value);
   }
   let form = (
-    <form className="search" onSubmit={handleSubmit}>
-      <input type="search" placeholder="Enter a city..."onChange={searchCity} />
+    <form className="search" onSubmit={handleSubmit} >
+      <input type="search" placeholder="Enter a city..."  autoFocus="on" onChange={searchCity} />
       <button type="submit"> Search </button>
     </form>
   );
+  
   if (message) {
     return (
-      <div>
+      <div className="row">
         {form}
+       <strong className="Maincity">{city} </strong> 
+       <p className="temperature">
+        temperature:{Math.round(weather.temperature)}°C </p>
+        <div className="col-6">
+        
         <ul className="totallist">
-          <li> {city}  </li>
-          <li> temperature:{Math.round(weather.temperature)}°C </li>
-          <li> description:{weather.humidity}% </li>
-          <li> Humidity: {weather.humidity}%</li>
+          <li> Humidity:{weather.humidity}%</li>
           <li> wind:{weather.wind} km/h </li>
           <li>
             <img src={weather.icon} alt={weather.description} />
           </li>
         </ul>
+        </div>
       </div>
     );
   } else {
